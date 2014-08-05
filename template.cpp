@@ -37,28 +37,10 @@ int indouble(double* in){
     return scanf("%lf",in);
 }
 
-//void printarray(int* lst,int len){
-//    for(int i=0;i<len;i++){
-//        printf("%d ",lst[i]);
-//    }
-//    puts("");
-//}
-//
-///** Totally can't work. Use Marco instead.
-//    ... wow function sucks macro rocks
-// */
-//void printmatrix(int** mat, int row, int col){
-//    for(int i=0;i<row;i++){
-//        //printarray(*(mat+i*col),col);
-//        printarray(*(mat+i),col); // true pointer plus... // never successfully runned so never tested.
-//    }
-//}
-
 void test(){
-    int a[2][3]={{1,2,3},{4,5,6}};
+    int a[][3]={{1,2,3},{4,5,6}};
     int b[][3]={9,8,7,6,5,4};
 
-    printArray(a[1],3);
     printMatrix(a,2,3);
     printMatrix(b,2,3);
 }
