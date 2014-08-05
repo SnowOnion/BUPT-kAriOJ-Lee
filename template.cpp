@@ -19,7 +19,8 @@ using namespace std;
 const double eps=1e-8;
 const double pi=atan(1.0)*4;
 const int inf=2147483600;
-int pow10[7]= {1,10,100,1000,10000,100000,1000000};
+int tenpower[7]= {1,10,100,1000,10000,100000,1000000};
+// pow10 is dangerous
 
 #define f0n_1(_x,n) for(int _x=0;_x<n;_x++)
 #define f1n_1(_x,n) for(int _x=1;_x<n;_x++)
