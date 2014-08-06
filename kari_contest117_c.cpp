@@ -1,4 +1,11 @@
-#include<memory.h>
+/**
+http://code.bupt.edu.cn/problem/contest/117/problem/C/
+悍然蒙特卡洛
+*/
+
+#include <memory.h>
+#include <ctime>
+
 
 #include <cmath>
 #include <ctime>
@@ -54,31 +61,50 @@ int indouble(double* in){
     return scanf("%lf",in);
 }
 
+/*init as 0*/
+int exist[110];
+int remain;
+int N;
+
+/*before init*/
 void test(){
-    f0n_1(i,3){
-        int r[1];
-        r[0]++;
-        printf("%d\n",r[0]);
-    }
+
 }
 
 void init(){
-
+    srand(time(NULL));
 }
 
+void caseInit(){
+    memset(exist,0,sizeof(exist));
+    remain=N;
+}
+
+
 void solve(){
-    /*
-    int cases;
-    inint(&cases);
-    while(cases--){
 
-    }*/
+    while(inint(&N)>0){
 
-    // input var
-    while(scanf("")>0){
+        int sum=0;
+        int testtimes=1000;
 
+        f1n(t,testtimes){
+            caseInit();
+            int i;
+            for(i=1;i<=1000;i++){
+                int num=rand()%N;
+                if(!exist[num]){
+                    remain--;
+                    exist[num]=1;
+                }
+                if(remain==0){
+                    break;
+                }
+            }// here i is the times of trying. if i>10000, i:=10001.
+            sum+=i;
+        }
+        printf("%.6lf\n",((double)sum)/testtimes);
     }
-
 }
 
 int main(){

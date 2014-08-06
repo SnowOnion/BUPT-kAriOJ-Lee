@@ -1,3 +1,8 @@
+/**
+http://code.bupt.edu.cn/problem/contest/117/problem/A/
+¿Ï¶¨T
+*/
+
 #include<memory.h>
 
 #include <cmath>
@@ -54,31 +59,51 @@ int indouble(double* in){
     return scanf("%lf",in);
 }
 
-void test(){
-    f0n_1(i,3){
-        int r[1];
-        r[0]++;
-        printf("%d\n",r[0]);
+/*init as -1; bound PRIME[2]=1, PRIME[1]=0*/
+int PRIME[32768];
+int
+
+int isprime(int n){
+    if((n<32768) && (PRIME[n]!=-1)){
+        return PRIME[n];
     }
+    else{
+        //printf("Eval: isprime(%d)\n",n);
+        for(int fa=2;fa*fa<=n;fa++){
+            if(!isprime(fa)){
+                //printf("Skp: (%d)\n",fa);
+                continue;
+            }
+            //printf("Mod: (%d)\n",fa);
+            if(n%fa==0){
+                if(n<32768) PRIME[n]=0;
+                return 0;
+            }
+        }
+        if(n<32768) PRIME[n]=1;
+        return 1;
+    }
+}
+
+/*before init*/
+void test(){
+
 }
 
 void init(){
-
+    memset(PRIME,-1,sizeof(PRIME));
+    PRIME[2]=1;
 }
 
 void solve(){
-    /*
-    int cases;
-    inint(&cases);
-    while(cases--){
-
-    }*/
-
-    // input var
-    while(scanf("")>0){
-
+    int N;
+    while(inint(&N)>0){
+        int mei=0;
+        for(int i=2;i<=N;i++){
+            if(isprime(i))mei+=1;
+        }
+        printf("%d\n",mei);
     }
-
 }
 
 int main(){

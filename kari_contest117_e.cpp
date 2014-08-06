@@ -1,3 +1,19 @@
+
+/**
+东风将船向x+1,y方向吹； 南风将船向x,y-1方向吹； 西风将船向x-1,y方向吹； 北风将船向x,y+1方向吹。 请问叔叔和小妹妹最早什么时间回到码头？注意，小妹妹的船是有锚的～她不希望船动的话叔叔就在第一时间把锚抛下去。
+
+输入格式
+输入包含多组数据。每组输入第一行包含五个整数，t,sx,sy,ex,ey，第二行包含t个字符，仅含'E','S','W','N'。
+
+坐标绝对值小于1000000000。t<=100000。输入保证起点重、终点坐标不相同。
+
+输出格式
+输出一个t表示最早到达码头的时间，如果到达不了则输出-1。
+
+@status 想提交的时候比赛结束了.
+*/
+
+
 #include<memory.h>
 
 #include <cmath>
@@ -55,11 +71,7 @@ int indouble(double* in){
 }
 
 void test(){
-    f0n_1(i,3){
-        int r[1];
-        r[0]++;
-        printf("%d\n",r[0]);
-    }
+
 }
 
 void init(){
@@ -67,18 +79,38 @@ void init(){
 }
 
 void solve(){
-    /*
-    int cases;
-    inint(&cases);
-    while(cases--){
+    int t,sx,sy,ex,ey;
+    char wind;
 
-    }*/
+    while(scanf("%d%d%d%d%d",&t,&sx,&sy,&ex,&ey)>0){
 
-    // input var
-    while(scanf("")>0){
+        int xdelta=ex-sx,ydelta=ey-sy;
+        int result=0;
 
+        f0n_1(i,t){
+            scanf("%c",&wind);
+            switch(wind){
+        case 'E':
+            if(xdelta>0) xdelta--;
+            break;
+        case 'W':
+            if(xdelta<0) xdelta++;
+            break;
+        case 'N':
+            if(ydelta>0) ydelta--;
+            break;
+        case 'S':
+            if(ydelta<0) ydelta++;
+            break;
+            }
+            if(!(xdelta||ydelta)){
+                printf("%d\n",i);
+                result=1;
+                break;
+            }
+        }
+        if(!result) printf("%d\n",-1);
     }
-
 }
 
 int main(){
