@@ -18,9 +18,8 @@ int main(){
     int radix[10010];
     int in;
 
-    memset(radix,0,sizeof(radix));
-
     while(scanf("%d",&n)>0){
+        memset(radix,0,sizeof(radix));
         for(int i=0;i<n;i++){
             scanf("%d",&in);
             radix[in]+=1;

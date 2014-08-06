@@ -22,11 +22,27 @@ const int inf=2147483600;
 int tenpower[7]= {1,10,100,1000,10000,100000,1000000};
 // pow10 is dangerous
 
+#define __ printf("------------------------------------------\n");
+
 #define f0n_1(_x,n) for(int _x=0;_x<n;_x++)
 #define f1n_1(_x,n) for(int _x=1;_x<n;_x++)
 #define f0n(_x,n) for(int _x=0;_x<=n;_x++)
 #define f1n(_x,n) for(int _x=1;_x<=n;_x++)
+#define fn_10(_x,n) for(int _x=n-1;_x>=0;_x--)
+#define fn_11(_x,n) for(int _x=n-1;_x>0;_x--)
+#define fn0(_x,n) for(int _x=n;_x>=0;_x--)
+#define fn1(_x,n) for(int _x=n;_x>0;_x--)
 
+/**
+    int a[][3]={{1,2,3},{4,5,6}};
+    int b[][3]={9,8,7,6,5,4};
+
+    printMatrix(a,2,3);
+    __
+    printMatrix(b,2,3);
+    __
+    printArray(b[1],3);
+*/
 #define printArray(lst,len) f0n_1(_i,(len)){printf("%d ",lst[_i]);} puts("");
 #define printMatrix(mat,row,col) f0n_1(_j,(row)){printArray(mat[_j],(col));}
 
@@ -39,11 +55,11 @@ int indouble(double* in){
 }
 
 void test(){
-    int a[][3]={{1,2,3},{4,5,6}};
-    int b[][3]={9,8,7,6,5,4};
-
-    printMatrix(a,2,3);
-    printMatrix(b,2,3);
+    f0n_1(i,3){
+        int r[1];
+        r[0]++;
+        printf("%d\n",r[0]);
+    }
 }
 
 void init(){
