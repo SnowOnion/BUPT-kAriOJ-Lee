@@ -1,3 +1,10 @@
+/**
+http://code.bupt.edu.cn/problem/p/386/
+做过的题型, 嘻嘻
+@status AC
+*/
+
+
 #include<memory.h>
 
 #include <cmath>
@@ -54,36 +61,45 @@ int indouble(double* in){
     return scanf("%lf",in);
 }
 
-/** 这个看起来像是上限? 8G 32位 等等 似乎有点傻逼
-一个开大了不行 开多个却可以... */
-// int viola[500000];
+int candy[100010];
+int DP[100010]; // dp[x]:= \sum_{i=1}^x candy[i]
 
 void test(){
-    int viola[500000];
-    int viola2[500000];
-    int viola3[500000];
-    int viola4[500000];
-    int viola5[500000];
-    __
+
 }
 
 void init(){
 
 }
 
+void calc(int n){
+    DP[0]=0;
+    f1n(i,n){
+        DP[i]=DP[i-1]+candy[i];
+    }
+}
+
 void solve(){
-    /*
     int cases;
     inint(&cases);
     while(cases--){
+        //memset(DP,-1,sizeof(DP)); // 直接离线算完, 不lazy
+        int N;
+        inint(&N);
+        f1n(i,N){
+            inint(&candy[i]);
+        }
 
-    }*/
+        calc(N);
 
-    // input var
-    // while(scanf("")>0){
-    //
-    // }
-
+        int M;
+        inint(&M);
+        int l,r;
+        while(M--){
+            scanf("%d%d",&l,&r);
+            printf("%d\n",DP[r]-DP[l-1]);
+        }
+    }
 }
 
 int main(){
