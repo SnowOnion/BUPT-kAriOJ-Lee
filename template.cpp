@@ -16,6 +16,18 @@
 #include <map>
 using namespace std;
 
+typedef long long LL;
+/**
+Codeforces: use %I64d or cin cout insdead of %lld
+2010年 乔明达建议用cout http://tieba.baidu.com/p/937886727
+2009年 郭家寶做了一些不同 64 位整数类型声明 / 占位符 组合的实验 https://www.byvoid.com/blog/c-int64
+TODO 问程玺 他是C整数专家...
+*/
+
+// TODO STL 用熟先
+// TODO DP 和 graph/flow 的模板...
+// TODO 并查集etc...
+
 const double eps=1e-8;
 const double pi=atan(1.0)*4;
 const int inf=2147483600;
@@ -54,17 +66,14 @@ int indouble(double* in){
     return scanf("%lf",in);
 }
 
-/** �����������������? 8G 32λ �ȵ� �ƺ��е�ɵ��
-һ�������˲��� �����ȴ����... */
+/** 这个看起来像是上限? 8G 32位 等等 似乎有点傻逼
+一个开大了不行 开多个却可以... */
 // int viola[500000];
 //    int viola2[500000];
 //    int viola3[500000];
 //    int viola4[500000];
 //    int viola5[500000];
 
-void test(){
-
-}
 
 void init(){
 
@@ -86,7 +95,6 @@ void solve(){
 }
 
 int main(){
-    test();
     init();
     solve();
 
